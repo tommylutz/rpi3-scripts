@@ -24,3 +24,5 @@ cd quake3
 ```
 * Copy pak0.pk3 etc over to ```/home/pi/quake3/build/release-linux-arm/baseq3/``` using WinSCP
 * Create ```/home/pi/Desktop/quake3.desktop``` shortcut file
+* Test quake3 client by launching the icon on the desktop - works
+* Test quake3 server by running ```/home/pi/quake3/start_server.sh```. Able to log into game from local client.
