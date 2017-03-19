@@ -13,3 +13,14 @@
     * Enable SSH in interface options
     * Change default password (default is raspberry)
     * Change Locale to US/EN
+    * Reboot when prompted
+  * Upgrade packages to latest: ```sudo apt-get update; sudo apt-get upgrade```
+## Clone and Build quake3
+```
+sudo apt-get install libsdl1.2-dev
+git clone https://github.com/tommylutz/quake3.git
+cd quake3
+./build_rpi_raspbian.sh
+```
+Copy pak0.pk3 etc over to /home/pi/quake3/build/release-linux-arm/baseq3/ using WinSCP
+Create /home/pi/Desktop/quake3.desktop shortcut file
