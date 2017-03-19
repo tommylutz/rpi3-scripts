@@ -9,10 +9,15 @@ su - pi -c "cd /home/pi/quake/quake3 && nohup /home/pi/quake/quake3/start_server
 ```
 
 ## Wifi Hotspot with NAT Routing
-* dnsmasq
+
 ### hostapd
 The hostapd package is required to turn RPi3 into a wifi hotspot.
-First, install it using aptget.
+After completing these steps, you
+should be able to see the SSID of your Raspberry Pi broadcasting (Pi3-AP
+unless you changed it). You will not get an IP address until you
+configure ```dnsmasq``` (later).
+
+First, install hostapd using aptget. 
 ```
 sudo apt-get install dnsmasq hostapd
 ```
@@ -71,7 +76,26 @@ iface wlan0 inet static
     network 192.168.2.0
     broadcast 192.168.2.255
 ```
+You may wish to comment out the existing lines in case you wish to act as a wifi client again.
 
+### dnsmasq
+
+First, install the package
+```
+sudo apt-get install dnsmasq
+```
+Next, configure your DNS service in ```/etc/dnsmasq.conf```
+This is the entire contents of the file. You may wish to save the original one to .sav or something.
+```
+interface=wlan0
+listen-address=192.168.2.1
+bind-interfaces
+server=8.8.8.8
+domain-needed
+bogus-priv
+dhcp-range=192.168.2.100,192.168.2.200,12h
+dhcp-option=option:router,192.168.2.1
+```
 
 ```
 #Add the following to /etc/rc.local to auto-enable ip forwarding on startup:
