@@ -177,3 +177,36 @@ sudo ln /usr/share/ca-certificates/mozilla/* /opt/Citrix/ICAClient/keystore/cace
 sudo apt-get update
 sudo apt-get upgrade
 ```
+* Wiimotes: http://www.instructables.com/id/Wiimote-Controller-Configuration-for-Raspberry-Pi-/?ALLSTEPS
+```
+sudo apt-get install python-cwiid
+sudo apt-get install wminput
+```
+File ```/etc/udev/rules.d/wiimote.rules```
+```
+KERNEL=="uinput", MODE="0666"
+```
+Check bluetooth
+```
+/etc/init.d/bluetooth status
+```
+File ```/home/pi/mywinput```
+```
+#WiiMote
+Wiimote.A  = BTN_A
+Wiimote.B = BTN_B
+Wiimote.Dpad.X = ABS_Y
+Wiimote.Dpad.Y = -ABS_X
+Wiimote.Minus = BTN_SELECT
+Wiimote.Plus = BTN_START
+Wiimote.Home = BTN_MODE
+Wiimote.1 = BTN_X
+Wiimote.2 = BTN_Y
+# Nunchuk
+Nunchuk.C = BTN_C
+Nunchuk.Z = BTN_Z
+Plugin.led.Led1 = 1
+#Plugin.led.Led2 = 1
+Plugin.led.Led3 = 1
+#Plugin.led.Led4 = 1
+```
