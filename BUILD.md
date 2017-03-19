@@ -22,5 +22,5 @@ git clone https://github.com/tommylutz/quake3.git
 cd quake3
 ./build_rpi_raspbian.sh
 ```
-Copy pak0.pk3 etc over to /home/pi/quake3/build/release-linux-arm/baseq3/ using WinSCP
-Create /home/pi/Desktop/quake3.desktop shortcut file
+* Copy pak0.pk3 etc over to ```/home/pi/quake3/build/release-linux-arm/baseq3/``` using WinSCP
+* Create /home/pi/Desktop/quake3.desktop shortcut file
