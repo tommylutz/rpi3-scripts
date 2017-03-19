@@ -7,11 +7,18 @@ This is not all original material. I leveraged tutorials from the following site
 
 
 ## Quake 3 Arena
-* ioquake3 via github.com/tommylutz/quake3
+* ioquake3 via github.com/tommylutz/quake3 (has minor fixes to link line and build script)
 ```
-#To start u automatically, add the following line to /etc/rc.local
-su - pi -c "cd /home/pi/quake/quake3 && nohup /home/pi/quake/quake3/start_server.sh &"
+sudo apt-get install libsdl1.2-dev
+git clone https://github.com/tommylutz/quake3.git
+cd quake3
+./build_rpi_raspbian.sh
 ```
+Find ```pak0.pk3, pak1.pk3, ... pak8.pk3``` files from a legit copy of Quake 3 Arena, and copy to ```build/release-linux-arm/baseq3/```
+```
+./start_server.sh
+```
+The start_server.sh script will emit instructions on what to add to ```/etc/rc.local``` to start up quake 3 dedicated server on boot, if you'd like.
 
 ## Wifi Hotspot with NAT Routing
 
