@@ -47,5 +47,7 @@ cd quake3
 * Add ```uinput``` to ```/etc/modules```
 * Install files ```/home/pi/wiimotes.sh /home/pi/mywminput1```
 * Test wiimote binding and map with emulationstation (1+2 on wiimote, run wiimotes.sh)
-
+## OpenRCT2
+* ```wget https://nih.at/libzip/libzip-1.2.0.tar.gz```, ./configure, sudo checkinstall (to install .deb)
+* ```git clone https://github.com/OpenRCT2/OpenRCT2.git``` - standard cmake build, resolve deps
 
