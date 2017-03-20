@@ -33,3 +33,9 @@ cd quake3
 * ```sudo dpkg -i icaclient_13.5.0.10185126_armhf.deb```
 * Link certs for ICA client from Mozilla ```sudo ln /usr/share/ca-certificates/mozilla/* /opt/Citrix/ICAClient/keystore/cacerts/```
 * Test ICA client
+## EmulationStation / RetroPie
+* Follow directions https://github.com/retropie/RetroPie-Setup/wiki/Manual-Installation
+* Add ScummVM
+* Fix failed boot into X ```sudo mv /etc/splashscreen.list /etc/splashscreen.list.sav```
+* Reboot and validate X comes up and auto logs in
+* Hit Ctrl+F1 and run ```emulationstation```. Verify it loads.
