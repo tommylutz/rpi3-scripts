@@ -35,18 +35,18 @@ cd quake3
 * ```sudo dpkg -i icaclient_13.5.0.10185126_armhf.deb```
 * Link certs for ICA client from Mozilla ```sudo ln /usr/share/ca-certificates/mozilla/* /opt/Citrix/ICAClient/keystore/cacerts/```
 * Test ICA client
-## EmulationStation / RetroPie
-* Follow directions https://github.com/retropie/RetroPie-Setup/wiki/Manual-Installation
-* Add ScummVM
-* Fix failed boot into X ```sudo mv /etc/splashscreen.list /etc/splashscreen.list.sav```
-* Reboot and validate X comes up and auto logs in
-* Hit Ctrl+F1 and run ```emulationstation```. Verify it loads.
 ## Add wiimote support for emulationstation
 * Install packages ```sudo apt-get install python-cwiid wminput```
 * Add udev rules in ```/etc/udev/rules.d/wiimote.rules``` : ```KERNEL=="uinput", MODE="0666"```
 * Add ```uinput``` to ```/etc/modules```
 * Install files ```/home/pi/wiimotes.sh /home/pi/mywminput1```
 * Test wiimote binding and map with emulationstation (1+2 on wiimote, run wiimotes.sh)
+## EmulationStation / RetroPie
+* Follow directions https://github.com/retropie/RetroPie-Setup/wiki/Manual-Installation
+* Add ScummVM
+* Fix failed boot into X ```sudo mv /etc/splashscreen.list /etc/splashscreen.list.sav```
+* Reboot and validate X comes up and auto logs in
+* Hit Ctrl+F1 and run ```emulationstation```. Verify it loads.
 ## OpenRCT2
 * ```wget https://nih.at/libzip/libzip-1.2.0.tar.gz```, ./configure, sudo checkinstall (to install .deb)
 * ```git clone https://github.com/OpenRCT2/OpenRCT2.git``` - standard cmake build, resolve deps
