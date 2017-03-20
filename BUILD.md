@@ -15,6 +15,8 @@
     * Change Locale to US/EN
     * Reboot when prompted
   * Upgrade packages to latest: ```sudo apt-get update; sudo apt-get upgrade```
+## Localize Rpi3 to US
+ * http://rohankapoor.com/2012/04/americanizing-the-raspberry-pi/
 ## Clone and Build quake3
 ```
 sudo apt-get install libsdl1.2-dev
@@ -39,3 +41,11 @@ cd quake3
 * Fix failed boot into X ```sudo mv /etc/splashscreen.list /etc/splashscreen.list.sav```
 * Reboot and validate X comes up and auto logs in
 * Hit Ctrl+F1 and run ```emulationstation```. Verify it loads.
+## Add wiimote support for emulationstation
+* Install packages ```sudo apt-get install python-cwiid wminput```
+* Add udev rules in ```/etc/udev/rules.d/wiimote.rules``` : ```KERNEL=="uinput", MODE="0666"```
+* Add ```uinput``` to ```/etc/modules```
+* Install files ```/home/pi/wiimotes.sh /home/pi/mywminput1```
+* Test wiimote binding and map with emulationstation (1+2 on wiimote, run wiimotes.sh)
+
+
