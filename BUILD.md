@@ -26,3 +26,10 @@ cd quake3
 * Create ```/home/pi/Desktop/quake3.desktop``` shortcut file
 * Test quake3 client by launching the icon on the desktop - works
 * Test quake3 server by running ```/home/pi/quake3/start_server.sh```. Able to log into game from local client.
+## Citrix Receiver
+* Download the "Receiver for Linux (ARM HF)" debian package from https://www.citrix.com/downloads/citrix-receiver/linux/receiver-for-linux-latest.html
+* ```sudo apt-get install libxerces-c3.1 libwebkitgtk-1.0-0``` (dependencies)
+* ```sudo apt-get -f install``` (fix missing deps)
+* ```sudo dpkg -i icaclient_13.5.0.10185126_armhf.deb```
+* Link certs for ICA client from Mozilla ```sudo ln /usr/share/ca-certificates/mozilla/* /opt/Citrix/ICAClient/keystore/cacerts/```
+* Test ICA client
